@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио Студента</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <img src="images/Logo_maxim.svg" class="logo-foto">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/projects.html">Проекты</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/diary.html">Дневник</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/contacts.html">Контакты</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center">
+                    <img src="images/student image.png" alt="Фото студента" class="profile-img rounded-circle">
+                </div>
+                <div class="col-md-8">
+                    <h1 class="display-4 fw-bold">Максим</h1>
+                    <p class="lead">Привет! Я студент Факультета "Фуллстек разработка", группа ЭФБО-11-24. Увлекаюсь
+                        веб-разработкой</p>
+
+                    <div class="mt-4">
+                        <a href="assets/resume.docx" download="Резюме_Максим.docx"
+                            class="download-btn btn btn-light btn-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-download" viewBox="0 0 16 16">
+                                <path
+                                    d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                                <path
+                                    d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+                            </svg>
+                            Скачать резюме
+                        </a>
+                        <p class="text-light mt-2 small opacity-75">DOCX</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Навыки -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Мои навыки</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>HTML/CSS</span>
+                            <span>98%</span>
+                        </div>
+                        <div class="progress skill-bar">
+                            <div class="progress-bar" style="width: 98%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>JavaScript</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="progress skill-bar">
+                            <div class="progress-bar" style="width: 88%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Bootstrap</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress skill-bar">
+                            <div class="progress-bar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>React</span>
+                            <span>68%</span>
+                        </div>
+                        <div class="progress skill-bar">
+                            <div class="progress-bar" style="width: 68%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Проекты -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Лучшие проекты</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card h-100">
+                        <img src="images/msite3.png" class="card-img-top" alt="Мой сайт">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Мой сайт</h5>
+                            <p class="card-text">Персональный сайт-портфолио</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card h-100">
+                        <img src="images/1-fatsecret.jpg" class="card-img-top" alt="Калькулятор калорий">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Калькулятор калорий</h5>
+                            <p class="card-text">Приложение для подсчета калорий</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card h-100">
+                        <img src="images/images34242.png" class="card-img-top" alt="Генератор паролей">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Генератор паролей</h5>
+                            <p class="card-text">Генерация безопасных паролей</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="bg-dark text-white py-4 mt-auto">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">© 2025 Контакты</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="https://github.com/blur3773" class="text-white me-3">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
