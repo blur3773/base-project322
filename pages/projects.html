@@ -5,177 +5,189 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Проекты - Портфолио</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 
-<body class="d-flex flex-column min-vh-100">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="../index.html">
-                <img src="../images/Logo_maxim.svg" class="logo-foto">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index.html">Главная</a>
+<body>
+    <div class="page">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="header__content">
+                    <h1 class="header__title">Проекты</h1>
+                    <p class="header__subtitle">Мои лучшие работы</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="container">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="../index.html" class="nav__link">Главная</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="projects.html">Проекты</a>
+                    <li class="nav__item nav__item--active">
+                        <a href="projects.html" class="nav__link">Проекты</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="diary.html">Дневник</a>
+                    <li class="nav__item">
+                        <a href="diary.html" class="nav__link">Дневник</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contacts.html">Контакты</a>
+                    <li class="nav__item">
+                        <a href="contacts.html" class="nav__link">Контакты</a>
                     </li>
                 </ul>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-    <main class="flex-grow-1">
-        <section class="projects-hero py-5">
-            <div class="container text-center">
-                <h1 class="display-4 fw-bold mb-4">Мои проекты</h1>
-                <p class="lead">Здесь собраны мои лучшие работы и проекты</p>
+        <!-- Main Content -->
+        <main class="main">
+            <div class="container">
+                <!-- Projects Header -->
+                <section class="projects__header">
+                    <h2 class="section-title">Мои проекты</h2>
+                    <div class="projects__filters">
+                        <button class="filter filter--active" data-filter="all">Все</button>
+                        <button class="filter" data-filter="html">HTML/CSS</button>
+                        <button class="filter" data-filter="js">JavaScript</button>
+                        <button class="filter" data-filter="react">React</button>
+                    </div>
+                </section>
+
+                <!-- Projects Grid -->
+                <section class="projects__grid">
+                    <!-- Project 1 -->
+                    <article class="project-card" data-category="html">
+                        <div class="project-card__image">
+                            <img src="../images/msite3.png" alt="Личный сайт" class="responsive-image">
+                        </div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">Личный сайт</h3>
+                            <p class="project-card__description">
+                                Персональный сайт-портфолио с адаптивным дизайном
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">Bootstrap</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="project-card" data-category="js">
+                        <div class="project-card__image">
+                            <img src="../images/1-fatsecret.jpg" alt="Калькулятор калорий" class="responsive-image">
+                        </div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">Калькулятор калорий</h3>
+                            <p class="project-card__description">
+                                Приложение для подсчета калорий с использованием Nutrition API
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">API</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="project-card" data-category="js">
+                        <div class="project-card__image">
+                            <img src="../images/images34242.png" alt="Генератор паролей" class="responsive-image">
+                        </div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">Генератор паролей</h3>
+                            <p class="project-card__description">
+                                Инструмент для генерации безопасных паролей с настройкой параметров
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Security</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 4 -->
+                    <article class="project-card" data-category="react">
+                        <div class="project-card__image">
+                            <img src="../images/todoList.jpg" alt="Todo App React" class="responsive-image">
+                        </div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">Todo App React</h3>
+                            <p class="project-card__description">
+                                Приложение для управления задачами с использованием React и LocalStorage
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Hooks</span>
+                                <span class="tag">LocalStorage</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 5 -->
+                    <article class="project-card" data-category="react">
+                        <div class="project-card__image">
+                            <img src="../images/weather.png" alt="Weather App React" class="responsive-image">
+                        </div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">Weather App</h3>
+                            <p class="project-card__description">
+                                Приложение для просмотра погоды с использованием API и React
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="tag">React</span>
+                                <span class="tag">API</span>
+                                <span class="tag">Axios</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 6 -->
+                    <article class="project-card" data-category="html">
+                        <div class="project-card__image">
+                            <img src="../images/portfolio.jpg" alt="Портфолио" class="responsive-image">
+                        </div>
+                        <div class="project-card__content">
+                            <h3 class="project-card__title">Портфолио</h3>
+                            <p class="project-card__description">
+                                Адаптивный сайт-портфолио с современным дизайном
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="tag">Bootstrap</span>
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                            </div>
+                        </div>
+                    </article>
+                </section>
             </div>
-        </section>
+        </main>
 
-        <section class="container mb-4">
-            <div class="row justify-content-center">
-                <div class="col-12 text-center">
-                    <div class="filter-buttons">
-                        <button class="btn filter-btn active" data-filter="all">Все</button>
-                        <button class="btn filter-btn" data-filter="html">HTML/CSS</button>
-                        <button class="btn filter-btn" data-filter="js">JavaScript</button>
-                        <button class="btn filter-btn" data-filter="react">React</button>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__content">
+                    <p class="footer__copyright">© 2025 Портфолио Максима</p>
+                    <div class="footer__links">
+                        <a href="mailto:izosimov.m.i@edu.mirea.ru" class="footer__link">izosimov.m.i@edu.mirea.ru</a>
+                        <a href="https://github.com/blur3773" class="footer__link">GitHub</a>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section class="container mb-5">
-            <div class="row">
-                <div class="col-md-6 col-lg-4 mb-4" data-category="html">
-                    <div class="card project-card h-100">
-                        <img src="../images/msite3.png" class="card-img-top" alt="Личный сайт">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Личный сайт</h5>
-                            <p class="card-text text-muted">HTML, CSS, Bootstrap</p>
-                            <div class="mt-auto">
-                                <span class="badge bg-primary">HTML</span>
-                                <span class="badge bg-info">CSS</span>
-                                <span class="badge bg-purple">Bootstrap</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 mb-4" data-category="js">
-                    <div class="card project-card h-100">
-                        <img src="../images/1-fatsecret.jpg" class="card-img-top" alt="Калькулятор калорий">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Калькулятор калорий</h5>
-                            <p class="card-text text-muted">JavaScript, Nutrition API</p>
-                            <div class="mt-auto">
-                                <span class="badge bg-success">JavaScript</span>
-                                <span class="badge bg-warning">API</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 mb-4" data-category="js">
-                    <div class="card project-card h-100">
-                        <img src="../images/images34242.png" class="card-img-top" alt="Генератор паролей">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Генератор паролей</h5>
-                            <p class="card-text text-muted">JavaScript, Security</p>
-                            <div class="mt-auto">
-                                <span class="badge bg-success">JavaScript</span>
-                                <span class="badge bg-danger">Security</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 mb-4" data-category="react">
-                    <div class="card project-card h-100">
-                        <img src="../images/todoList.jpg" class="card-img-top" alt="Todo App React">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Todo App React</h5>
-                            <p class="card-text text-muted">React, Hooks, LocalStorage</p>
-                            <div class="mt-auto">
-                                <span class="badge bg-danger">React</span>
-                                <span class="badge bg-info">Hooks</span>
-                                <span class="badge bg-secondary">LocalStorage</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 mb-4" data-category="react">
-                    <div class="card project-card h-100">
-                        <img src="../images/weather.png" class="card-img-top" alt="Weather App React">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Weather App</h5>
-                            <p class="card-text text-muted">React, API, Axios</p>
-                            <div class="mt-auto">
-                                <span class="badge bg-danger">React</span>
-                                <span class="badge bg-warning">API</span>
-                                <span class="badge bg-success">Axios</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4 mb-4" data-category="html">
-                    <div class="card project-card h-100">
-                        <img src="../images/portfolio.jpg" class="card-img-top" alt="Портфолио">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Портфолио</h5>
-                            <p class="card-text text-muted">Bootstrap, Responsive</p>
-                            <div class="mt-auto">
-                                <span class="badge bg-purple">Bootstrap</span>
-                                <span class="badge bg-primary">HTML</span>
-                                <span class="badge bg-info">CSS</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-dark text-white py-4 mt-auto">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="mb-0">© 2025 Портфолио Максима</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <a href="https://github.com/blur3773" class="text-white me-3">GitHub</a>
-                    <a href="contacts.html" class="text-white">Контакты</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        </footer>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const filterButtons = document.querySelectorAll('.filter-btn');
+            const filterButtons = document.querySelectorAll('.filter');
             const projectCards = document.querySelectorAll('[data-category]');
 
             filterButtons.forEach(button => {
                 button.addEventListener('click', function () {
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
+                    filterButtons.forEach(btn => btn.classList.remove('filter--active'));
+                    this.classList.add('filter--active');
 
                     const filterValue = this.getAttribute('data-filter');
 
@@ -184,11 +196,11 @@
                             card.style.display = 'block';
                             setTimeout(() => {
                                 card.style.opacity = '1';
-                                card.style.transform = 'scale(1)';
+                                card.style.transform = 'translateY(0)';
                             }, 50);
                         } else {
                             card.style.opacity = '0';
-                            card.style.transform = 'scale(0.8)';
+                            card.style.transform = 'translateY(20px)';
                             setTimeout(() => {
                                 card.style.display = 'none';
                             }, 300);
@@ -199,4 +211,5 @@
         });
     </script>
 </body>
+
 </html>
