@@ -4,14 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>Проекты - Портфолио</title>
+    <title>Проекты - Портфолио Максима</title>
+    <meta name="description" content="Портфолио проектов Максима: веб-разработка, JavaScript, React, HTML/CSS проекты.">
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 
 <body>
+    <!-- Skip to main content for keyboard users -->
+    <a href="#main-content" class="skip-link">
+        Перейти к основному содержимому
+    </a>
+
     <div class="page">
         <!-- Header -->
-        <header class="header">
+        <header class="header" role="banner">
             <div class="container">
                 <div class="header__content">
                     <h1 class="header__title">Проекты</h1>
@@ -21,160 +27,204 @@
         </header>
 
         <!-- Navigation -->
-        <nav class="nav">
+        <nav class="nav" aria-label="Основная навигация">
             <div class="container">
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="../index.html" class="nav__link">Главная</a>
+                <ul class="nav__list" role="menubar">
+                    <li class="nav__item" role="none">
+                        <a href="../index.html" class="nav__link" role="menuitem">Главная</a>
                     </li>
-                    <li class="nav__item nav__item--active">
-                        <a href="projects.html" class="nav__link">Проекты</a>
+                    <li class="nav__item nav__item--active" role="none">
+                        <a href="projects.html" class="nav__link" role="menuitem" aria-current="page">Проекты</a>
                     </li>
-                    <li class="nav__item">
-                        <a href="diary.html" class="nav__link">Дневник</a>
+                    <li class="nav__item" role="none">
+                        <a href="diary.html" class="nav__link" role="menuitem">Дневник</a>
                     </li>
-                    <li class="nav__item">
-                        <a href="contacts.html" class="nav__link">Контакты</a>
+                    <li class="nav__item" role="none">
+                        <a href="contacts.html" class="nav__link" role="menuitem">Контакты</a>
                     </li>
                 </ul>
             </div>
         </nav>
 
         <!-- Main Content -->
-        <main class="main">
+        <main class="main" id="main-content" role="main">
             <div class="container">
                 <!-- Projects Header -->
-                <section class="projects__header">
-                    <h2 class="section-title">Мои проекты</h2>
-                    <div class="projects__filters">
-                        <button class="filter filter--active" data-filter="all">Все</button>
-                        <button class="filter" data-filter="html">HTML/CSS</button>
-                        <button class="filter" data-filter="js">JavaScript</button>
-                        <button class="filter" data-filter="react">React</button>
+                <section class="projects__header" aria-labelledby="projects-title">
+                    <h2 id="projects-title" class="section-title">Мои проекты</h2>
+                    <div class="projects__filters" role="group" aria-label="Фильтры проектов">
+                        <button class="filter filter--active" 
+                                data-filter="all"
+                                aria-pressed="true"
+                                aria-label="Показать все проекты">
+                            Все
+                        </button>
+                        <button class="filter" 
+                                data-filter="html"
+                                aria-pressed="false"
+                                aria-label="Показать проекты HTML/CSS">
+                            HTML/CSS
+                        </button>
+                        <button class="filter" 
+                                data-filter="js"
+                                aria-pressed="false"
+                                aria-label="Показать проекты JavaScript">
+                            JavaScript
+                        </button>
+                        <button class="filter" 
+                                data-filter="react"
+                                aria-pressed="false"
+                                aria-label="Показать проекты React">
+                            React
+                        </button>
                     </div>
                 </section>
 
                 <!-- Projects Grid -->
-                <section class="projects__grid">
+                <section class="projects__grid" role="list" aria-label="Список проектов">
                     <!-- Project 1 -->
-                    <article class="project-card" data-category="html">
+                    <article class="project-card" data-category="html" role="listitem">
                         <div class="project-card__image">
-                            <img src="../images/msite3.png" alt="Личный сайт" class="responsive-image">
+                            <img src="../images/msite3.png" alt="Главная страница личного сайта с адаптивным дизайном" class="responsive-image">
                         </div>
                         <div class="project-card__content">
                             <h3 class="project-card__title">Личный сайт</h3>
                             <p class="project-card__description">
                                 Персональный сайт-портфолио с адаптивным дизайном
                             </p>
-                            <div class="project-card__tags">
-                                <span class="tag">HTML</span>
-                                <span class="tag">CSS</span>
-                                <span class="tag">Bootstrap</span>
+                            <div class="project-card__tags" role="list" aria-label="Технологии проекта">
+                                <span class="tag" role="listitem">HTML</span>
+                                <span class="tag" role="listitem">CSS</span>
+                                <span class="tag" role="listitem">Bootstrap</span>
                             </div>
-                            <a href="https://github.com/blur3773/frontend-and-backend-practice" class="button button--outline project-card__button" target="_blank">
+                            <a href="https://github.com/blur3773/frontend-and-backend-practice" 
+                               class="button button--outline project-card__button" 
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label="Посмотреть код проекта Личный сайт на GitHub (откроется в новой вкладке)">
                                 Посмотреть код
                             </a>
                         </div>
                     </article>
 
                     <!-- Project 2 -->
-                    <article class="project-card" data-category="js">
+                    <article class="project-card" data-category="js" role="listitem">
                         <div class="project-card__image">
-                            <img src="../images/1-fatsecret.jpg" alt="Калькулятор калорий" class="responsive-image">
+                            <img src="../images/1-fatsecret.jpg" alt="Интерфейс калькулятора калорий с Nutrition API" class="responsive-image">
                         </div>
                         <div class="project-card__content">
                             <h3 class="project-card__title">Калькулятор калорий</h3>
                             <p class="project-card__description">
                                 Приложение для подсчета калорий с использованием Nutrition API
                             </p>
-                            <div class="project-card__tags">
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">API</span>
+                            <div class="project-card__tags" role="list" aria-label="Технологии проекта">
+                                <span class="tag" role="listitem">JavaScript</span>
+                                <span class="tag" role="listitem">API</span>
                             </div>
-                            <a href="https://github.com/maksimowiczm/FoodYou" class="button button--outline project-card__button" target="_blank">
+                            <a href="https://github.com/maksimowiczm/FoodYou" 
+                               class="button button--outline project-card__button" 
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label="Посмотреть код проекта Калькулятор калорий на GitHub (откроется в новой вкладке)">
                                 Посмотреть код
                             </a>
                         </div>
                     </article>
 
                     <!-- Project 3 -->
-                    <article class="project-card" data-category="js">
+                    <article class="project-card" data-category="js" role="listitem">
                         <div class="project-card__image">
-                            <img src="../images/images34242.png" alt="Генератор паролей" class="responsive-image">
+                            <img src="../images/images34242.png" alt="Интерфейс генератора безопасных паролей" class="responsive-image">
                         </div>
                         <div class="project-card__content">
                             <h3 class="project-card__title">Генератор паролей</h3>
                             <p class="project-card__description">
                                 Инструмент для генерации безопасных паролей с настройкой параметров
                             </p>
-                            <div class="project-card__tags">
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">Security</span>
+                            <div class="project-card__tags" role="list" aria-label="Технологии проекта">
+                                <span class="tag" role="listitem">JavaScript</span>
+                                <span class="tag" role="listitem">Security</span>
                             </div>
-                            <a href="https://github.com/sebastienrousseau/password-generator" class="button button--outline project-card__button" target="_blank">
+                            <a href="https://github.com/sebastienrousseau/password-generator" 
+                               class="button button--outline project-card__button" 
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label="Посмотреть код проекта Генератор паролей на GitHub (откроется в новой вкладке)">
                                 Посмотреть код
                             </a>
                         </div>
                     </article>
 
                     <!-- Project 4 -->
-                    <article class="project-card" data-category="react">
+                    <article class="project-card" data-category="react" role="listitem">
                         <div class="project-card__image">
-                            <img src="../images/todoList.jpg" alt="Todo App React" class="responsive-image">
+                            <img src="../images/todoList.jpg" alt="Интерфейс Todo приложения на React" class="responsive-image">
                         </div>
                         <div class="project-card__content">
                             <h3 class="project-card__title">Todo App React</h3>
                             <p class="project-card__description">
                                 Приложение для управления задачами с использованием React и LocalStorage
                             </p>
-                            <div class="project-card__tags">
-                                <span class="tag">React</span>
-                                <span class="tag">Hooks</span>
-                                <span class="tag">LocalStorage</span>
+                            <div class="project-card__tags" role="list" aria-label="Технологии проекта">
+                                <span class="tag" role="listitem">React</span>
+                                <span class="tag" role="listitem">Hooks</span>
+                                <span class="tag" role="listitem">LocalStorage</span>
                             </div>
-                            <a href="https://github.com/blur3773/todo-react" class="button button--outline project-card__button" target="_blank">
+                            <a href="https://github.com/blur3773/todo-react" 
+                               class="button button--outline project-card__button" 
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label="Посмотреть код проекта Todo App React на GitHub (откроется в новой вкладке)">
                                 Посмотреть код
                             </a>
                         </div>
                     </article>
 
                     <!-- Project 5 -->
-                    <article class="project-card" data-category="react">
+                    <article class="project-card" data-category="react" role="listitem">
                         <div class="project-card__image">
-                            <img src="../images/weather.png" alt="Weather App React" class="responsive-image">
+                            <img src="../images/weather.png" alt="Интерфейс погодного приложения на React" class="responsive-image">
                         </div>
                         <div class="project-card__content">
                             <h3 class="project-card__title">Weather App</h3>
                             <p class="project-card__description">
                                 Приложение для просмотра погоды с использованием API и React
                             </p>
-                            <div class="project-card__tags">
-                                <span class="tag">React</span>
-                                <span class="tag">API</span>
-                                <span class="tag">Axios</span>
+                            <div class="project-card__tags" role="list" aria-label="Технологии проекта">
+                                <span class="tag" role="listitem">React</span>
+                                <span class="tag" role="listitem">API</span>
+                                <span class="tag" role="listitem">Axios</span>
                             </div>
-                            <a href="https://github.com/blur3773/weather-app" class="button button--outline project-card__button" target="_blank">
+                            <a href="https://github.com/blur3773/weather-app" 
+                               class="button button--outline project-card__button" 
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label="Посмотреть код проекта Weather App на GitHub (откроется в новой вкладке)">
                                 Посмотреть код
                             </a>
                         </div>
                     </article>
 
                     <!-- Project 6 -->
-                    <article class="project-card" data-category="html">
+                    <article class="project-card" data-category="html" role="listitem">
                         <div class="project-card__image">
-                            <img src="../images/portfolio.jpg" alt="Портфолио" class="responsive-image">
+                            <img src="../images/portfolio.jpg" alt="Адаптивный дизайн портфолио сайта" class="responsive-image">
                         </div>
                         <div class="project-card__content">
                             <h3 class="project-card__title">Портфолио</h3>
                             <p class="project-card__description">
                                 Адаптивный сайт-портфолио с современным дизайном
                             </p>
-                            <div class="project-card__tags">
-                                <span class="tag">Bootstrap</span>
-                                <span class="tag">HTML</span>
-                                <span class="tag">CSS</span>
+                            <div class="project-card__tags" role="list" aria-label="Технологии проекта">
+                                <span class="tag" role="listitem">Bootstrap</span>
+                                <span class="tag" role="listitem">HTML</span>
+                                <span class="tag" role="listitem">CSS</span>
                             </div>
-                            <a href="https://github.com/blur3773/portfolio" class="button button--outline project-card__button" target="_blank">
+                            <a href="https://github.com/blur3773/portfolio" 
+                               class="button button--outline project-card__button" 
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label="Посмотреть код проекта Портфолио на GitHub (откроется в новой вкладке)">
                                 Посмотреть код
                             </a>
                         </div>
@@ -184,13 +234,17 @@
         </main>
 
         <!-- Footer -->
-        <footer class="footer">
+        <footer class="footer" role="contentinfo">
             <div class="container">
                 <div class="footer__content">
                     <p class="footer__copyright">© 2025 Портфолио Максима</p>
                     <div class="footer__links">
                         <a href="mailto:izosimov.m.i@edu.mirea.ru" class="footer__link">izosimov.m.i@edu.mirea.ru</a>
-                        <a href="https://github.com/blur3773" class="footer__link">GitHub</a>
+                        <a href="https://github.com/blur3773" 
+                           class="footer__link" 
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="GitHub профиль (откроется в новой вкладке)">GitHub</a>
                     </div>
                 </div>
             </div>
@@ -198,24 +252,110 @@
     </div>
 
     <script>
+        // Enhanced keyboard navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Focus management for better keyboard navigation
+            const mainContent = document.getElementById('main-content');
+            
+            // Set focus to main content when skip link is used
+            const skipLink = document.querySelector('.skip-link');
+            if (skipLink) {
+                skipLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    mainContent.setAttribute('tabindex', '-1');
+                    mainContent.focus();
+                });
+            }
+
+            // Improved tab navigation for navigation menu
+            const navLinks = document.querySelectorAll('.nav__link');
+            const firstNavLink = navLinks[0];
+            const lastNavLink = navLinks[navLinks.length - 1];
+
+            // Handle tab wrapping in navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Tab') {
+                    // If shift+tab on first nav link, focus skip link
+                    if (e.shiftKey && document.activeElement === firstNavLink) {
+                        e.preventDefault();
+                        skipLink.focus();
+                    }
+                    // If tab on last nav link and no shift, focus first focusable element in main content
+                    else if (!e.shiftKey && document.activeElement === lastNavLink) {
+                        e.preventDefault();
+                        const firstFocusable = mainContent.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+                        if (firstFocusable) {
+                            firstFocusable.focus();
+                        }
+                    }
+                }
+
+                // Escape key to focus main content
+                if (e.key === 'Escape') {
+                    mainContent.focus();
+                }
+            });
+
+            // Auto-focus main content on page load for screen readers
+            setTimeout(() => {
+                mainContent.setAttribute('tabindex', '-1');
+                mainContent.focus();
+            }, 100);
+        });
+
+        // Projects filtering functionality
         document.addEventListener('DOMContentLoaded', function () {
             const filterButtons = document.querySelectorAll('.filter');
             const projectCards = document.querySelectorAll('[data-category]');
+            const projectsGrid = document.querySelector('.projects__grid');
+
+            function updateFilterStates(activeButton) {
+                filterButtons.forEach(btn => {
+                    const isPressed = btn === activeButton;
+                    btn.setAttribute('aria-pressed', isPressed);
+                    btn.classList.toggle('filter--active', isPressed);
+                });
+            }
+
+            function announceFilterChange(filterValue) {
+                const message = filterValue === 'all' 
+                    ? 'Показаны все проекты' 
+                    : `Показаны проекты в категории ${filterValue}`;
+                
+                // Создаем live region для объявлений
+                let liveRegion = document.getElementById('filter-announcement');
+                if (!liveRegion) {
+                    liveRegion = document.createElement('div');
+                    liveRegion.id = 'filter-announcement';
+                    liveRegion.setAttribute('aria-live', 'polite');
+                    liveRegion.setAttribute('aria-atomic', 'true');
+                    liveRegion.className = 'visually-hidden';
+                    document.body.appendChild(liveRegion);
+                }
+                
+                liveRegion.textContent = message;
+            }
 
             filterButtons.forEach(button => {
                 button.addEventListener('click', function () {
-                    filterButtons.forEach(btn => btn.classList.remove('filter--active'));
-                    this.classList.add('filter--active');
-
                     const filterValue = this.getAttribute('data-filter');
-
+                    
+                    // Обновляем состояние кнопок
+                    updateFilterStates(this);
+                    
+                    // Фильтруем проекты
+                    let visibleCount = 0;
                     projectCards.forEach(card => {
-                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        const shouldShow = filterValue === 'all' || 
+                                         card.getAttribute('data-category') === filterValue;
+                        
+                        if (shouldShow) {
                             card.style.display = 'block';
                             setTimeout(() => {
                                 card.style.opacity = '1';
                                 card.style.transform = 'translateY(0)';
                             }, 50);
+                            visibleCount++;
                         } else {
                             card.style.opacity = '0';
                             card.style.transform = 'translateY(20px)';
@@ -224,10 +364,26 @@
                             }, 300);
                         }
                     });
+
+                    // Обновляем доступность grid
+                    projectsGrid.setAttribute('aria-label', `Список проектов. Найдено проектов: ${visibleCount}`);
+                    
+                    // Анонсируем изменение для скринридеров
+                    announceFilterChange(filterValue);
+                });
+
+                // Добавляем обработку клавиатуры
+                button.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.click();
+                    }
                 });
             });
+
+            // Инициализация доступности
+            projectsGrid.setAttribute('aria-label', `Список проектов. Найдено проектов: ${projectCards.length}`);
         });
     </script>
 </body>
-
 </html>

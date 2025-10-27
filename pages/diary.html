@@ -4,14 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>Дневник - Портфолио</title>
+    <title>Дневник - Портфолио Максима</title>
+    <meta name="description" content="Учебный дневник Максима: прогресс в обучении, хронология изучения технологий, курсы веб-разработки.">
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 
 <body>
+    <!-- Skip to main content for keyboard users -->
+    <a href="#main-content" class="skip-link">
+        Перейти к основному содержимому
+    </a>
+
     <div class="page">
         <!-- Header -->
-        <header class="header">
+        <header class="header" role="banner">
             <div class="container">
                 <div class="header__content">
                     <h1 class="header__title">Учебный дневник</h1>
@@ -21,141 +27,240 @@
         </header>
 
         <!-- Navigation -->
-        <nav class="nav">
+        <nav class="nav" aria-label="Основная навигация">
             <div class="container">
-                <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="../index.html" class="nav__link">Главная</a>
+                <ul class="nav__list" role="menubar">
+                    <li class="nav__item" role="none">
+                        <a href="../index.html" class="nav__link" role="menuitem">Главная</a>
                     </li>
-                    <li class="nav__item">
-                        <a href="projects.html" class="nav__link">Проекты</a>
+                    <li class="nav__item" role="none">
+                        <a href="projects.html" class="nav__link" role="menuitem">Проекты</a>
                     </li>
-                    <li class="nav__item nav__item--active">
-                        <a href="diary.html" class="nav__link">Дневник</a>
+                    <li class="nav__item nav__item--active" role="none">
+                        <a href="diary.html" class="nav__link" role="menuitem" aria-current="page">Дневник</a>
                     </li>
-                    <li class="nav__item">
-                        <a href="contacts.html" class="nav__link">Контакты</a>
+                    <li class="nav__item" role="none">
+                        <a href="contacts.html" class="nav__link" role="menuitem">Контакты</a>
                     </li>
                 </ul>
             </div>
         </nav>
 
         <!-- Main Content -->
-        <main class="main">
+        <main class="main" id="main-content" role="main">
             <div class="container">
                 <!-- Add Entry Form -->
-                <section class="add-entry">
-                    <h2 class="add-entry__title">Добавить новую запись</h2>
-                    <form class="add-entry__form" id="diaryForm">
-                        <div class="form-group">
-                            <label for="entryDate" class="form-label">Дата</label>
-                            <input type="date" id="entryDate" class="form-input" required>
-                        </div>
+                <section class="add-entry" aria-labelledby="add-entry-title">
+                    <h2 id="add-entry-title" class="add-entry__title">Добавить новую запись</h2>
+                    <form class="add-entry__form" id="diaryForm" novalidate>
+                        <fieldset>
+                            <legend class="visually-hidden">Информация о новой записи в дневнике</legend>
+                            
+                            <div class="form-group">
+                                <label for="entryDate" class="form-label">
+                                    Дата изучения <span class="required" aria-hidden="true">*</span>
+                                    <span class="visually-hidden">обязательное поле</span>
+                                </label>
+                                <input type="date" 
+                                       id="entryDate" 
+                                       class="form-input" 
+                                       required
+                                       aria-required="true"
+                                       aria-describedby="date-help">
+                                <div id="date-help" class="help-text">
+                                    Выберите дату, когда вы изучали тему
+                                </div>
+                                <div id="entryDate-error" class="error-text" role="alert" aria-live="polite" hidden></div>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="entryTitle" class="form-label">Название</label>
-                            <input type="text" id="entryTitle" class="form-input" placeholder="Введите название темы" required>
-                        </div>
+                            <div class="form-group">
+                                <label for="entryTitle" class="form-label">
+                                    Название темы <span class="required" aria-hidden="true">*</span>
+                                    <span class="visually-hidden">обязательное поле</span>
+                                </label>
+                                <input type="text" 
+                                       id="entryTitle" 
+                                       class="form-input" 
+                                       placeholder="Введите название темы" 
+                                       required
+                                       aria-required="true"
+                                       aria-describedby="title-help">
+                                <div id="title-help" class="help-text">
+                                    Например: "Основы JavaScript" или "Работа с API"
+                                </div>
+                                <div id="entryTitle-error" class="error-text" role="alert" aria-live="polite" hidden></div>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="entryDescription" class="form-label">Описание</label>
-                            <textarea id="entryDescription" class="form-textarea" placeholder="Опишите что вы изучили..." required></textarea>
-                        </div>
+                            <div class="form-group">
+                                <label for="entryDescription" class="form-label">
+                                    Описание <span class="required" aria-hidden="true">*</span>
+                                    <span class="visually-hidden">обязательное поле</span>
+                                </label>
+                                <textarea id="entryDescription" 
+                                          class="form-textarea" 
+                                          placeholder="Опишите что вы изучили..." 
+                                          required
+                                          aria-required="true"
+                                          aria-describedby="description-help"></textarea>
+                                <div id="description-help" class="help-text">
+                                    Подробно опишите изученный материал, ключевые моменты и примеры
+                                </div>
+                                <div id="entryDescription-error" class="error-text" role="alert" aria-live="polite" hidden></div>
+                            </div>
 
-                        <div class="form-group">
-                            <label for="entryStatus" class="form-label">Статус</label>
-                            <select id="entryStatus" class="form-input" required>
-                                <option value="completed">Завершено</option>
-                                <option value="in-progress">В процессе</option>
-                                <option value="planned">Запланировано</option>
-                            </select>
-                        </div>
+                            <div class="form-group">
+                                <label for="entryStatus" class="form-label">
+                                    Статус изучения <span class="required" aria-hidden="true">*</span>
+                                    <span class="visually-hidden">обязательное поле</span>
+                                </label>
+                                <select id="entryStatus" 
+                                        class="form-input" 
+                                        required
+                                        aria-required="true"
+                                        aria-describedby="status-help">
+                                    <option value="">Выберите статус</option>
+                                    <option value="completed">Завершено</option>
+                                    <option value="in-progress">В процессе</option>
+                                    <option value="planned">Запланировано</option>
+                                </select>
+                                <div id="status-help" class="help-text">
+                                    Укажите текущий статус изучения темы
+                                </div>
+                                <div id="entryStatus-error" class="error-text" role="alert" aria-live="polite" hidden></div>
+                            </div>
+                        </fieldset>
 
-                        <button type="submit" class="button button--primary">
-                            Добавить запись
-                        </button>
+                        <div class="form-actions">
+                            <button type="submit" class="button button--primary">
+                                Добавить запись
+                            </button>
+                            <button type="reset" class="button button--outline">
+                                Очистить форму
+                            </button>
+                        </div>
                     </form>
                 </section>
 
                 <!-- Timeline Section -->
-                <section class="timeline">
-                    <h2 class="section-title">Мой учебный прогресс</h2>
+                <section class="timeline" aria-labelledby="timeline-title">
+                    <h2 id="timeline-title" class="section-title">Мой учебный прогресс</h2>
                     
-                    <div class="timeline__item">
-                        <div class="timeline__date">15 дек</div>
-                        <div class="timeline__content">
-                            <h3 class="timeline__title">Верстка макета сайта</h3>
-                            <p class="timeline__description">
-                                Изучение основ HTML и CSS, создание адаптивных макетов
-                            </p>
-                            <span class="timeline__status timeline__status--completed">Завершено</span>
+                    <div class="timeline__list" role="list" aria-label="Хронология учебного прогресса">
+                        <div class="timeline__item" role="listitem">
+                            <div class="timeline__date">
+                                <time datetime="2024-12-15">15 дек</time>
+                            </div>
+                            <div class="timeline__content">
+                                <h3 class="timeline__title">Верстка макета сайта</h3>
+                                <p class="timeline__description">
+                                    Изучение основ HTML и CSS, создание адаптивных макетов
+                                </p>
+                                <span class="timeline__status timeline__status--completed" 
+                                      role="status"
+                                      aria-label="Статус: Завершено">
+                                    Завершено
+                                </span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="timeline__item">
-                        <div class="timeline__date">10 дек</div>
-                        <div class="timeline__content">
-                            <h3 class="timeline__title">JavaScript основы</h3>
-                            <p class="timeline__description">
-                                Изучение переменных, функций, циклов и условий в JavaScript
-                            </p>
-                            <span class="timeline__status timeline__status--completed">Завершено</span>
+                        <div class="timeline__item" role="listitem">
+                            <div class="timeline__date">
+                                <time datetime="2024-12-10">10 дек</time>
+                            </div>
+                            <div class="timeline__content">
+                                <h3 class="timeline__title">JavaScript основы</h3>
+                                <p class="timeline__description">
+                                    Изучение переменных, функций, циклов и условий в JavaScript
+                                </p>
+                                <span class="timeline__status timeline__status--completed" 
+                                      role="status"
+                                      aria-label="Статус: Завершено">
+                                    Завершено
+                                </span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="timeline__item">
-                        <div class="timeline__date">05 дек</div>
-                        <div class="timeline__content">
-                            <h3 class="timeline__title">Работа с формами</h3>
-                            <p class="timeline__description">
-                                Валидация форм, обработка событий и отправка данных
-                            </p>
-                            <span class="timeline__status timeline__status--in-progress">В процессе</span>
+                        <div class="timeline__item" role="listitem">
+                            <div class="timeline__date">
+                                <time datetime="2024-12-05">05 дек</time>
+                            </div>
+                            <div class="timeline__content">
+                                <h3 class="timeline__title">Работа с формами</h3>
+                                <p class="timeline__description">
+                                    Валидация форм, обработка событий и отправка данных
+                                </p>
+                                <span class="timeline__status timeline__status--in-progress" 
+                                      role="status"
+                                      aria-label="Статус: В процессе">
+                                    В процессе
+                                </span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="timeline__item">
-                        <div class="timeline__date">01 дек</div>
-                        <div class="timeline__content">
-                            <h3 class="timeline__title">Адаптивный дизайн</h3>
-                            <p class="timeline__description">
-                                Медиа-запросы, flexbox, grid layout для мобильных устройств
-                            </p>
-                            <span class="timeline__status timeline__status--planned">Запланировано</span>
+                        <div class="timeline__item" role="listitem">
+                            <div class="timeline__date">
+                                <time datetime="2024-12-01">01 дек</time>
+                            </div>
+                            <div class="timeline__content">
+                                <h3 class="timeline__title">Адаптивный дизайн</h3>
+                                <p class="timeline__description">
+                                    Медиа-запросы, flexbox, grid layout для мобильных устройств
+                                </p>
+                                <span class="timeline__status timeline__status--planned" 
+                                      role="status"
+                                      aria-label="Статус: Запланировано">
+                                    Запланировано
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </section>
 
                 <!-- Courses Section -->
-                <section class="courses">
-                    <h2 class="courses__title">Текущие курсы</h2>
-                    <div class="courses__grid">
-                        <div class="course">
+                <section class="courses" aria-labelledby="courses-title">
+                    <h2 id="courses-title" class="courses__title">Текущие курсы</h2>
+                    <div class="courses__grid" role="list" aria-label="Прогресс по курсам">
+                        <div class="course" role="listitem">
                             <div class="course__header">
                                 <span class="course__name">Веб-разработка</span>
                                 <span class="course__percent">90%</span>
                             </div>
-                            <div class="course__progress">
+                            <div class="course__progress" 
+                                 role="progressbar" 
+                                 aria-valuenow="90" 
+                                 aria-valuemin="0" 
+                                 aria-valuemax="100"
+                                 aria-label="Прогресс курса Веб-разработка: 90%">
                                 <div class="course__progress-bar" style="width: 90%"></div>
                             </div>
                         </div>
 
-                        <div class="course">
+                        <div class="course" role="listitem">
                             <div class="course__header">
                                 <span class="course__name">JavaScript</span>
                                 <span class="course__percent">70%</span>
                             </div>
-                            <div class="course__progress">
+                            <div class="course__progress" 
+                                 role="progressbar" 
+                                 aria-valuenow="70" 
+                                 aria-valuemin="0" 
+                                 aria-valuemax="100"
+                                 aria-label="Прогресс курса JavaScript: 70%">
                                 <div class="course__progress-bar" style="width: 70%"></div>
                             </div>
                         </div>
 
-                        <div class="course">
+                        <div class="course" role="listitem">
                             <div class="course__header">
                                 <span class="course__name">React</span>
                                 <span class="course__percent">50%</span>
                             </div>
-                            <div class="course__progress">
+                            <div class="course__progress" 
+                                 role="progressbar" 
+                                 aria-valuenow="50" 
+                                 aria-valuemin="0" 
+                                 aria-valuemax="100"
+                                 aria-label="Прогресс курса React: 50%">
                                 <div class="course__progress-bar" style="width: 50%"></div>
                             </div>
                         </div>
@@ -165,13 +270,17 @@
         </main>
 
         <!-- Footer -->
-        <footer class="footer">
+        <footer class="footer" role="contentinfo">
             <div class="container">
                 <div class="footer__content">
                     <p class="footer__copyright">© 2025 Портфолио Максима</p>
                     <div class="footer__links">
                         <a href="mailto:izosimov.m.i@edu.mirea.ru" class="footer__link">izosimov.m.i@edu.mirea.ru</a>
-                        <a href="https://github.com/blur3773" class="footer__link">GitHub</a>
+                        <a href="https://github.com/blur3773" 
+                           class="footer__link" 
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="GitHub профиль (откроется в новой вкладке)">GitHub</a>
                     </div>
                 </div>
             </div>
@@ -179,21 +288,183 @@
     </div>
 
     <script>
-        document.getElementById('diaryForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+        // Enhanced keyboard navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Focus management for better keyboard navigation
+            const mainContent = document.getElementById('main-content');
             
-            const date = document.getElementById('entryDate').value;
-            const title = document.getElementById('entryTitle').value;
-            const description = document.getElementById('entryDescription').value;
-            const status = document.getElementById('entryStatus').value;
-            
-            // Здесь можно добавить логику для сохранения записи
-            alert(`Запись добавлена!\nДата: ${date}\nНазвание: ${title}\nСтатус: ${status}`);
-            
-            // Очистка формы
-            this.reset();
+            // Set focus to main content when skip link is used
+            const skipLink = document.querySelector('.skip-link');
+            if (skipLink) {
+                skipLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    mainContent.setAttribute('tabindex', '-1');
+                    mainContent.focus();
+                });
+            }
+
+            // Improved tab navigation for navigation menu
+            const navLinks = document.querySelectorAll('.nav__link');
+            const firstNavLink = navLinks[0];
+            const lastNavLink = navLinks[navLinks.length - 1];
+
+            // Handle tab wrapping in navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Tab') {
+                    // If shift+tab on first nav link, focus skip link
+                    if (e.shiftKey && document.activeElement === firstNavLink) {
+                        e.preventDefault();
+                        skipLink.focus();
+                    }
+                    // If tab on last nav link and no shift, focus first focusable element in main content
+                    else if (!e.shiftKey && document.activeElement === lastNavLink) {
+                        e.preventDefault();
+                        const firstFocusable = mainContent.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+                        if (firstFocusable) {
+                            firstFocusable.focus();
+                        }
+                    }
+                }
+
+                // Escape key to focus main content
+                if (e.key === 'Escape') {
+                    mainContent.focus();
+                }
+            });
+
+            // Auto-focus main content on page load for screen readers
+            setTimeout(() => {
+                mainContent.setAttribute('tabindex', '-1');
+                mainContent.focus();
+            }, 100);
+        });
+
+        // Diary form functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const diaryForm = document.getElementById('diaryForm');
+            const entryDate = document.getElementById('entryDate');
+            const entryTitle = document.getElementById('entryTitle');
+            const entryDescription = document.getElementById('entryDescription');
+            const entryStatus = document.getElementById('entryStatus');
+
+            // Функция для показа ошибок
+            function showError(input, message) {
+                const errorElement = document.getElementById(input.id + '-error');
+                errorElement.textContent = message;
+                errorElement.hidden = false;
+                input.setAttribute('aria-invalid', 'true');
+                input.classList.add('error');
+            }
+
+            // Функция для скрытия ошибок
+            function hideError(input) {
+                const errorElement = document.getElementById(input.id + '-error');
+                errorElement.hidden = true;
+                input.setAttribute('aria-invalid', 'false');
+                input.classList.remove('error');
+            }
+
+            // Валидация в реальном времени
+            entryDate.addEventListener('blur', function() {
+                if (!this.value) {
+                    showError(this, 'Пожалуйста, выберите дату');
+                } else {
+                    hideError(this);
+                }
+            });
+
+            entryTitle.addEventListener('blur', function() {
+                if (!this.value.trim()) {
+                    showError(this, 'Поле "Название темы" обязательно для заполнения');
+                } else if (this.value.trim().length < 3) {
+                    showError(this, 'Название темы должно содержать не менее 3 символов');
+                } else {
+                    hideError(this);
+                }
+            });
+
+            entryDescription.addEventListener('blur', function() {
+                if (!this.value.trim()) {
+                    showError(this, 'Поле "Описание" обязательно для заполнения');
+                } else if (this.value.trim().length < 10) {
+                    showError(this, 'Описание должно содержать не менее 10 символов');
+                } else {
+                    hideError(this);
+                }
+            });
+
+            entryStatus.addEventListener('change', function() {
+                if (!this.value) {
+                    showError(this, 'Пожалуйста, выберите статус изучения');
+                } else {
+                    hideError(this);
+                }
+            });
+
+            // Обработка отправки формы
+            diaryForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                let isValid = true;
+
+                // Проверка всех полей
+                [entryDate, entryTitle, entryDescription, entryStatus].forEach(input => {
+                    if (input.type === 'select-one') {
+                        input.dispatchEvent(new Event('change'));
+                    } else {
+                        input.dispatchEvent(new Event('blur'));
+                    }
+                    if (input.getAttribute('aria-invalid') === 'true') {
+                        isValid = false;
+                    }
+                });
+
+                if (isValid) {
+                    const formData = {
+                        date: entryDate.value,
+                        title: entryTitle.value,
+                        description: entryDescription.value,
+                        status: entryStatus.options[entryStatus.selectedIndex].text
+                    };
+
+                    // Здесь должна быть реальная логика сохранения
+                    console.log('Запись добавлена:', formData);
+                    
+                    // Показать сообщение об успехе
+                    const successMessage = document.createElement('div');
+                    successMessage.className = 'success-message';
+                    successMessage.setAttribute('role', 'alert');
+                    successMessage.setAttribute('aria-live', 'polite');
+                    successMessage.innerHTML = `
+                        <h3>Запись добавлена!</h3>
+                        <p>Тема "${formData.title}" успешно добавлена в дневник.</p>
+                    `;
+                    
+                    diaryForm.parentNode.insertBefore(successMessage, diaryForm);
+                    diaryForm.reset();
+                    
+                    // Прокрутка к сообщению об успехе
+                    successMessage.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Удалить сообщение через 5 секунд
+                    setTimeout(() => {
+                        successMessage.remove();
+                    }, 5000);
+                } else {
+                    // Прокрутка к первой ошибке
+                    const firstError = document.querySelector('[aria-invalid="true"]');
+                    if (firstError) {
+                        firstError.focus();
+                        firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }
+            });
+
+            // Обработка сброса формы
+            diaryForm.addEventListener('reset', function() {
+                [entryDate, entryTitle, entryDescription, entryStatus].forEach(hideError);
+            });
         });
     </script>
 </body>
-
 </html>

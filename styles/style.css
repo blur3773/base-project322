@@ -1044,3 +1044,114 @@ body {
         transform: none;
     }
 }
+
+/* Улучшенные стили для доступности форм в дневнике */
+.form-actions {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    margin-top: var(--space-lg);
+}
+
+/* Стили для timeline списка */
+.timeline__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Улучшенные стили для статусов */
+.timeline__status:focus {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+}
+
+/* Улучшенные стили для фильтров проектов */
+.filter[aria-pressed="true"] {
+    background: var(--primary-color);
+    color: var(--text-white);
+    border-color: var(--primary-color);
+}
+
+/* Улучшенная доступность для карточек проектов */
+.project-card:focus-within {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Улучшенные стили для навигации */
+.nav__link[aria-current="page"] {
+    background: rgba(255, 255, 255, 0.2);
+    font-weight: 600;
+}
+
+/* Улучшенные стили для прогресс-баров */
+.skill__progress:focus,
+.course__progress:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+/* Improved Keyboard Navigation */
+.nav__link:focus {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.button:focus,
+.filter:focus,
+.form-input:focus,
+.form-textarea:focus,
+.form__input:focus,
+.form__textarea:focus {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Skip to main content link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    z-index: 1000;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 6px;
+    outline: 3px solid var(--accent-color);
+}
+
+/* Improved focus styles for all interactive elements */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Project card focus */
+.project-card:focus-within {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 4px;
+}
+
+/* Timeline item focus */
+.timeline__item:focus-within {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 4px;
+}
+
+/* Contact item focus */
+.contact-item:focus-within {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 4px;
+}

@@ -4,14 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-    <title>Портфолио Максима</title>
+    <title>Портфолио Максима - Студент-разработчик</title>
+    <meta name="description" content="Портфолио Максима - студента-разработчика. Веб-разработка, современные интерфейсы, проекты и навыки.">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
+    <!-- Skip to main content for keyboard users -->
+    <a href="#main-content" class="skip-link">
+        Перейти к основному содержимому
+    </a>
+
     <div class="page">
         <!-- Header -->
-        <header class="header">
+        <header class="header" role="banner">
             <div class="container">
                 <div class="header__content">
                     <h1 class="header__title">Максим</h1>
@@ -21,84 +27,105 @@
         </header>
 
         <!-- Navigation -->
-        <nav class="nav">
+        <nav class="nav" aria-label="Основная навигация">
             <div class="container">
-                <ul class="nav__list">
-                    <li class="nav__item nav__item--active">
-                        <a href="index.html" class="nav__link">Главная</a>
+                <ul class="nav__list" role="menubar">
+                    <li class="nav__item nav__item--active" role="none">
+                        <a href="index.html" class="nav__link" role="menuitem" aria-current="page">Главная</a>
                     </li>
-                    <li class="nav__item">
-                        <a href="pages/projects.html" class="nav__link">Проекты</a>
+                    <li class="nav__item" role="none">
+                        <a href="pages/projects.html" class="nav__link" role="menuitem">Проекты</a>
                     </li>
-                    <li class="nav__item">
-                        <a href="pages/diary.html" class="nav__link">Дневник</a>
+                    <li class="nav__item" role="none">
+                        <a href="pages/diary.html" class="nav__link" role="menuitem">Дневник</a>
                     </li>
-                    <li class="nav__item">
-                        <a href="pages/contacts.html" class="nav__link">Контакты</a>
+                    <li class="nav__item" role="none">
+                        <a href="pages/contacts.html" class="nav__link" role="menuitem">Контакты</a>
                     </li>
                 </ul>
             </div>
         </nav>
 
         <!-- Main Content -->
-        <main class="main">
+        <main class="main" id="main-content" role="main">
             <div class="container">
                 <!-- Hero Section -->
-                <section class="hero">
+                <section class="hero" aria-labelledby="hero-greeting">
                     <div class="hero__content">
                         <div class="hero__image">
-                            <img src="images/student image.png" alt="Фото студента" class="hero__photo">
+                            <img src="images/student image.png" alt="Фото студента Максима" class="hero__photo">
                         </div>
                         <div class="hero__info">
-                            <h2 class="hero__greeting">Привет! Я Максим</h2>
+                            <h2 id="hero-greeting" class="hero__greeting">Привет! Я Максим</h2>
                             <p class="hero__description">
                                 Факультет "Фуллстек разработка", группа ЭФБО-11-24<br>
                                 Увлекаюсь веб-разработкой и созданием современных интерфейсов
                             </p>
                             <a href="assets/resume.docx" download="Резюме_Максим.docx" class="button button--primary hero__button">
                                 Скачать резюме
+                                <span class="visually-hidden">(файл в формате DOCX)</span>
                             </a>
                         </div>
                     </div>
                 </section>
 
                 <!-- Skills Section -->
-                <section class="skills">
-                    <h2 class="section-title">Мои навыки</h2>
-                    <div class="skills__grid">
-                        <div class="skill">
+                <section class="skills" aria-labelledby="skills-title">
+                    <h2 id="skills-title" class="section-title">Мои навыки</h2>
+                    <div class="skills__grid" role="list" aria-label="Список навыков">
+                        <div class="skill" role="listitem">
                             <div class="skill__header">
                                 <span class="skill__name">HTML/CSS</span>
                                 <span class="skill__percent">98%</span>
                             </div>
-                            <div class="skill__progress">
+                            <div class="skill__progress" 
+                                 role="progressbar" 
+                                 aria-valuenow="98" 
+                                 aria-valuemin="0" 
+                                 aria-valuemax="100"
+                                 aria-label="Уровень владения HTML/CSS: 98%">
                                 <div class="skill__progress-bar" style="width: 98%"></div>
                             </div>
                         </div>
-                        <div class="skill">
+                        <div class="skill" role="listitem">
                             <div class="skill__header">
                                 <span class="skill__name">JavaScript</span>
                                 <span class="skill__percent">88%</span>
                             </div>
-                            <div class="skill__progress">
+                            <div class="skill__progress" 
+                                 role="progressbar" 
+                                 aria-valuenow="88" 
+                                 aria-valuemin="0" 
+                                 aria-valuemax="100"
+                                 aria-label="Уровень владения JavaScript: 88%">
                                 <div class="skill__progress-bar" style="width: 88%"></div>
                             </div>
                         </div>
-                        <div class="skill">
+                        <div class="skill" role="listitem">
                             <div class="skill__header">
                                 <span class="skill__name">Bootstrap</span>
                                 <span class="skill__percent">85%</span>
                             </div>
-                            <div class="skill__progress">
+                            <div class="skill__progress" 
+                                 role="progressbar" 
+                                 aria-valuenow="85" 
+                                 aria-valuemin="0" 
+                                 aria-valuemax="100"
+                                 aria-label="Уровень владения Bootstrap: 85%">
                                 <div class="skill__progress-bar" style="width: 85%"></div>
                             </div>
                         </div>
-                        <div class="skill">
+                        <div class="skill" role="listitem">
                             <div class="skill__header">
                                 <span class="skill__name">React</span>
                                 <span class="skill__percent">68%</span>
                             </div>
-                            <div class="skill__progress">
+                            <div class="skill__progress" 
+                                 role="progressbar" 
+                                 aria-valuenow="68" 
+                                 aria-valuemin="0" 
+                                 aria-valuemax="100"
+                                 aria-label="Уровень владения React: 68%">
                                 <div class="skill__progress-bar" style="width: 68%"></div>
                             </div>
                         </div>
@@ -106,61 +133,64 @@
                 </section>
 
                 <!-- Projects Preview -->
-                <section class="projects-preview">
-                    <h2 class="section-title">Лучшие проекты</h2>
-                    <div class="projects-preview__grid">
-                        <article class="project-card">
+                <section class="projects-preview" aria-labelledby="projects-title">
+                    <h2 id="projects-title" class="section-title">Лучшие проекты</h2>
+                    <div class="projects-preview__grid" role="list" aria-label="Список проектов">
+                        <article class="project-card" role="listitem">
                             <div class="project-card__image">
-                                <img src="images/msite3.png" alt="Мой сайт" class="responsive-image">
+                                <img src="images/msite3.png" alt="Главная страница личного сайта-портфолио" class="responsive-image">
                             </div>
                             <div class="project-card__content">
                                 <h3 class="project-card__title">Мой сайт</h3>
                                 <p class="project-card__description">
                                     Персональный сайт-портфолио
                                 </p>
-                                <div class="project-card__tags">
-                                    <span class="tag">HTML</span>
-                                    <span class="tag">CSS</span>
-                                    <span class="tag">Bootstrap</span>
+                                <div class="project-card__tags" role="list" aria-label="Технологии проекта">
+                                    <span class="tag" role="listitem">HTML</span>
+                                    <span class="tag" role="listitem">CSS</span>
+                                    <span class="tag" role="listitem">Bootstrap</span>
                                 </div>
                                 <a href="pages/projects.html" class="button button--outline project-card__button">
                                     Подробнее
+                                    <span class="visually-hidden">о проекте "Мой сайт"</span>
                                 </a>
                             </div>
                         </article>
-                        <article class="project-card">
+                        <article class="project-card" role="listitem">
                             <div class="project-card__image">
-                                <img src="images/1-fatsecret.jpg" alt="Калькулятор калорий" class="responsive-image">
+                                <img src="images/1-fatsecret.jpg" alt="Интерфейс калькулятора калорий с графиками" class="responsive-image">
                             </div>
                             <div class="project-card__content">
                                 <h3 class="project-card__title">Калькулятор калорий</h3>
                                 <p class="project-card__description">
                                     Приложение для подсчета калорий
                                 </p>
-                                <div class="project-card__tags">
-                                    <span class="tag">JavaScript</span>
-                                    <span class="tag">API</span>
+                                <div class="project-card__tags" role="list" aria-label="Технологии проекта">
+                                    <span class="tag" role="listitem">JavaScript</span>
+                                    <span class="tag" role="listitem">API</span>
                                 </div>
                                 <a href="pages/projects.html" class="button button--outline project-card__button">
                                     Подробнее
+                                    <span class="visually-hidden">о проекте "Калькулятор калорий"</span>
                                 </a>
                             </div>
                         </article>
-                        <article class="project-card">
+                        <article class="project-card" role="listitem">
                             <div class="project-card__image">
-                                <img src="images/images34242.png" alt="Генератор паролей" class="responsive-image">
+                                <img src="images/images34242.png" alt="Интерфейс генератора паролей с настройками" class="responsive-image">
                             </div>
                             <div class="project-card__content">
                                 <h3 class="project-card__title">Генератор паролей</h3>
                                 <p class="project-card__description">
                                     Генерация безопасных паролей
                                 </p>
-                                <div class="project-card__tags">
-                                    <span class="tag">JavaScript</span>
-                                    <span class="tag">Security</span>
+                                <div class="project-card__tags" role="list" aria-label="Технологии проекта">
+                                    <span class="tag" role="listitem">JavaScript</span>
+                                    <span class="tag" role="listitem">Security</span>
                                 </div>
                                 <a href="pages/projects.html" class="button button--outline project-card__button">
                                     Подробнее
+                                    <span class="visually-hidden">о проекте "Генератор паролей"</span>
                                 </a>
                             </div>
                         </article>
@@ -170,17 +200,74 @@
         </main>
 
         <!-- Footer -->
-        <footer class="footer">
+        <footer class="footer" role="contentinfo">
             <div class="container">
                 <div class="footer__content">
                     <p class="footer__copyright">© 2025 Портфолио Максима</p>
                     <div class="footer__links">
                         <a href="mailto:izosimov.m.i@edu.mirea.ru" class="footer__link">izosimov.m.i@edu.mirea.ru</a>
-                        <a href="https://github.com/blur3773" class="footer__link">GitHub</a>
+                        <a href="https://github.com/blur3773" 
+                           class="footer__link" 
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="GitHub профиль (откроется в новой вкладке)">GitHub</a>
                     </div>
                 </div>
             </div>
         </footer>
     </div>
+
+    <script>
+        // Enhanced keyboard navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Focus management for better keyboard navigation
+            const mainContent = document.getElementById('main-content');
+            
+            // Set focus to main content when skip link is used
+            const skipLink = document.querySelector('.skip-link');
+            if (skipLink) {
+                skipLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    mainContent.setAttribute('tabindex', '-1');
+                    mainContent.focus();
+                });
+            }
+
+            // Improved tab navigation for navigation menu
+            const navLinks = document.querySelectorAll('.nav__link');
+            const firstNavLink = navLinks[0];
+            const lastNavLink = navLinks[navLinks.length - 1];
+
+            // Handle tab wrapping in navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Tab') {
+                    // If shift+tab on first nav link, focus skip link
+                    if (e.shiftKey && document.activeElement === firstNavLink) {
+                        e.preventDefault();
+                        skipLink.focus();
+                    }
+                    // If tab on last nav link and no shift, focus first focusable element in main content
+                    else if (!e.shiftKey && document.activeElement === lastNavLink) {
+                        e.preventDefault();
+                        const firstFocusable = mainContent.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+                        if (firstFocusable) {
+                            firstFocusable.focus();
+                        }
+                    }
+                }
+
+                // Escape key to focus main content
+                if (e.key === 'Escape') {
+                    mainContent.focus();
+                }
+            });
+
+            // Auto-focus main content on page load for screen readers
+            setTimeout(() => {
+                mainContent.setAttribute('tabindex', '-1');
+                mainContent.focus();
+            }, 100);
+        });
+    </script>
 </body>
 </html>
