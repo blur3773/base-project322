@@ -899,3 +899,148 @@ body {
 .project-card:hover .project-card__image .responsive-image {
     transform: scale(1.05);
 }
+
+@media (max-width: 1024px) {
+    .contacts__content {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+    
+    .hero__content {
+        gap: var(--space-xl);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 var(--space-sm);
+    }
+    
+    .header__title {
+        font-size: 2rem;
+    }
+    
+    .header__subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero__photo {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .hero__greeting {
+        font-size: 1.5rem;
+    }
+    
+    .projects__header {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+    
+    .projects__filters {
+        justify-content: center;
+    }
+    
+    .timeline__item {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .timeline__item::before {
+        display: none;
+    }
+    
+    .contact-form,
+    .contact-info {
+        padding: var(--space-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --space-xl: 1.5rem;
+        --space-2xl: 2rem;
+    }
+    
+    .header {
+        padding: var(--space-lg) 0;
+    }
+    
+    .main {
+        padding: var(--space-xl) 0;
+    }
+    
+    .hero__content {
+        padding: var(--space-lg);
+    }
+    
+    .skills__grid,
+    .courses__grid {
+        gap: var(--space-md);
+    }
+    
+    .skill,
+    .course {
+        padding: var(--space-md);
+    }
+    
+    .project-card__content {
+        padding: var(--space-md);
+    }
+    
+    .footer__content {
+        flex-direction: column;
+        gap: var(--space-md);
+        text-align: center;
+    }
+}
+
+/* Улучшения для очень маленьких экранов */
+@media (max-width: 360px) {
+    .projects-preview__grid,
+    .projects__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-card__image {
+        height: 150px;
+    }
+    
+    .hero__photo {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* Поддержка landscape ориентации на мобильных */
+@media (max-height: 500px) and (orientation: landscape) {
+    .header {
+        padding: var(--space-md) 0;
+    }
+    
+    .hero__content {
+        padding: var(--space-md);
+    }
+    
+    .main {
+        padding: var(--space-lg) 0;
+    }
+}
+
+/* Улучшения для touch устройств */
+@media (hover: none) and (pointer: coarse) {
+    .project-card:hover {
+        transform: none;
+    }
+    
+    .nav__link:hover {
+        transform: none;
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .button:hover {
+        transform: none;
+    }
+}
