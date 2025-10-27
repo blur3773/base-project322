@@ -1,79 +1,68 @@
-<!-- pages/projects.html - с добавленными React проектами -->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 
 <head>
-    <title>Проекты</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
-    <!-- Bootstrap CSS v5.2.1 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проекты - Портфолио</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 
 <body class="d-flex flex-column min-vh-100">
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand fw-bold" href="#">
-                    <img src="../images/Logo_maxim.svg" class="logo-foto">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="../index.html">Главная</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="projects.html">Проекты</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="diary.html">Дневник</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contacts.html">Контакты</a>
-                        </li>
-                    </ul>
-                </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">
+                <img src="../images/Logo_maxim.svg" class="logo-foto">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="projects.html">Проекты</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="diary.html">Дневник</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html">Контакты</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <main class="flex-grow-1">
-       
-        <section class="projects-hero">
+        <section class="projects-hero py-5">
             <div class="container text-center">
                 <h1 class="display-4 fw-bold mb-4">Мои проекты</h1>
                 <p class="lead">Здесь собраны мои лучшие работы и проекты</p>
             </div>
         </section>
 
-       
-        <section class="container">
+        <section class="container mb-4">
             <div class="row justify-content-center">
                 <div class="col-12 text-center">
                     <div class="filter-buttons">
                         <button class="btn filter-btn active" data-filter="all">Все</button>
-                        <button class="btn filter-btn" data-filter="html">HTML</button>
-                        <button class="btn filter-btn" data-filter="js">JS</button>
+                        <button class="btn filter-btn" data-filter="html">HTML/CSS</button>
+                        <button class="btn filter-btn" data-filter="js">JavaScript</button>
                         <button class="btn filter-btn" data-filter="react">React</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Карточки проектов -->
         <section class="container mb-5">
             <div class="row">
-                <!-- Проект 1 - HTML -->
-                <div class="col-md-6 col-lg-3 mb-4" data-category="html">
-                    <div class="card h-100 shadow-sm">
-                        <img src="../images/msite3.png"
-                            class="card-img-top" alt="Личный сайт">
+                <div class="col-md-6 col-lg-4 mb-4" data-category="html">
+                    <div class="card project-card h-100">
+                        <img src="../images/msite3.png" class="card-img-top" alt="Личный сайт">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Личный сайт</h5>
                             <p class="card-text text-muted">HTML, CSS, Bootstrap</p>
@@ -86,11 +75,9 @@
                     </div>
                 </div>
 
-                <!-- Проект 2 - JS -->
-                <div class="col-md-6 col-lg-3 mb-4" data-category="js">
-                    <div class="card h-100 shadow-sm">
-                        <img src="../images/1-fatsecret.jpg" class="card-img-top"
-                            alt="Калькулятор калорий">
+                <div class="col-md-6 col-lg-4 mb-4" data-category="js">
+                    <div class="card project-card h-100">
+                        <img src="../images/1-fatsecret.jpg" class="card-img-top" alt="Калькулятор калорий">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Калькулятор калорий</h5>
                             <p class="card-text text-muted">JavaScript, Nutrition API</p>
@@ -102,11 +89,9 @@
                     </div>
                 </div>
 
-                <!-- Проект 3 - JS -->
-                <div class="col-md-6 col-lg-3 mb-4" data-category="js">
-                    <div class="card h-100 shadow-sm">
-                        <img src="../images/password.png" class="card-img-top"
-                            alt="Генератор паролей">
+                <div class="col-md-6 col-lg-4 mb-4" data-category="js">
+                    <div class="card project-card h-100">
+                        <img src="../images/images34242.png" class="card-img-top" alt="Генератор паролей">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Генератор паролей</h5>
                             <p class="card-text text-muted">JavaScript, Security</p>
@@ -118,11 +103,9 @@
                     </div>
                 </div>
 
-                <!-- Проект 4 - React -->
-                <div class="col-md-6 col-lg-3 mb-4" data-category="react">
-                    <div class="card h-100 shadow-sm">
-                        <img src="../images/todoList.jpg" class="card-img-top"
-                            alt="Todo App React">
+                <div class="col-md-6 col-lg-4 mb-4" data-category="react">
+                    <div class="card project-card h-100">
+                        <img src="../images/todoList.jpg" class="card-img-top" alt="Todo App React">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Todo App React</h5>
                             <p class="card-text text-muted">React, Hooks, LocalStorage</p>
@@ -135,11 +118,9 @@
                     </div>
                 </div>
 
-                <!-- Проект 5 - React -->
-                <div class="col-md-6 col-lg-3 mb-4" data-category="react">
-                    <div class="card h-100 shadow-sm">
-                        <img src="../images/weather.png" class="card-img-top"
-                            alt="Weather App React">
+                <div class="col-md-6 col-lg-4 mb-4" data-category="react">
+                    <div class="card project-card h-100">
+                        <img src="../images/weather.png" class="card-img-top" alt="Weather App React">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Weather App</h5>
                             <p class="card-text text-muted">React, API, Axios</p>
@@ -152,11 +133,9 @@
                     </div>
                 </div>
 
-                <!-- Проект 7 - HTML -->
-                <div class="col-md-6 col-lg-3 mb-4" data-category="html">
-                    <div class="card h-100 shadow-sm">
-                        <img src="../images/portfolio.jpg" class="card-img-top"
-                            alt="Портфолио">
+                <div class="col-md-6 col-lg-4 mb-4" data-category="html">
+                    <div class="card project-card h-100">
+                        <img src="../images/portfolio.jpg" class="card-img-top" alt="Портфолио">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Портфолио</h5>
                             <p class="card-text text-muted">Bootstrap, Responsive</p>
@@ -164,23 +143,6 @@
                                 <span class="badge bg-purple">Bootstrap</span>
                                 <span class="badge bg-primary">HTML</span>
                                 <span class="badge bg-info">CSS</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Проект 8 - React -->
-                <div class="col-md-6 col-lg-3 mb-4" data-category="react">
-                    <div class="card h-100 shadow-sm">
-                        <img src="../images/chat-app.jpg" class="card-img-top"
-                            alt="Chat App React">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Чат-приложение</h5>
-                            <p class="card-text text-muted">React, Socket.io, Node.js</p>
-                            <div class="mt-auto">
-                                <span class="badge bg-danger">React</span>
-                                <span class="badge bg-warning">Socket.io</span>
-                                <span class="badge bg-success">Node.js</span>
                             </div>
                         </div>
                     </div>
@@ -193,35 +155,26 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <p class="mb-0">© 2025 Контакты</p>
+                    <p class="mb-0">© 2025 Портфолио Максима</p>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <a href="https://github.com/blur3773" class="text-white me-3">GitHub</a>
+                    <a href="contacts.html" class="text-white">Контакты</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        
         document.addEventListener('DOMContentLoaded', function () {
             const filterButtons = document.querySelectorAll('.filter-btn');
             const projectCards = document.querySelectorAll('[data-category]');
 
             filterButtons.forEach(button => {
                 button.addEventListener('click', function () {
-                    
                     filterButtons.forEach(btn => btn.classList.remove('active'));
-                    
                     this.classList.add('active');
 
                     const filterValue = this.getAttribute('data-filter');
@@ -229,8 +182,16 @@
                     projectCards.forEach(card => {
                         if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
                             card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'scale(1)';
+                            }, 50);
                         } else {
-                            card.style.display = 'none';
+                            card.style.opacity = '0';
+                            card.style.transform = 'scale(0.8)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
                         }
                     });
                 });
@@ -238,5 +199,4 @@
         });
     </script>
 </body>
-
 </html>

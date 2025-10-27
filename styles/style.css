@@ -204,3 +204,56 @@
 .progress-bar {
     transition: width 1s ease-in-out;
 }
+/* Анимации для фильтрации */
+[data-category] {
+    transition: all 0.3s ease;
+}
+
+/* Улучшенные анимации */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .logo-foto {
+        max-width: 25%;
+    }
+    
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .filter-buttons .btn {
+        margin: 2px;
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+}
